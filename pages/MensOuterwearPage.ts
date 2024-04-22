@@ -1,12 +1,12 @@
 import {Page} from "@playwright/test"
+import { HelperBase } from "./helperBase"
 
 
-export class MensOuterwear {
+export class MensOuterwear extends HelperBase {
 
-readonly page: Page
 
     constructor(page: Page){
-        this.page = page
+        super (page)
     }
 
     async mensOuterwearPage(){
