@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test'
-import { MensOuterwear } from '../page-objects/MensOuterwearPage.ts'
+import { MensOuterwear } from '../pages/MensOuterwearPage.ts'
 
 test.beforeEach (async({page}) => {
     await page.goto('https://shop.polymer-project.org/')
