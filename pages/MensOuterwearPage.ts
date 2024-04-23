@@ -2,7 +2,7 @@ import {Page} from "@playwright/test"
 import { HelperBase } from "./helperBase"
 
 
-export class MensOuterwear extends HelperBase {
+export class MensOuterwearPage extends HelperBase {
 
 
     constructor(page: Page){

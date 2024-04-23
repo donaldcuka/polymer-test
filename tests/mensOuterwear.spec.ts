@@ -1,5 +1,5 @@
 import {test, expect} from '@playwright/test'
-import { MensOuterwear } from '../pages/MensOuterwearPage.ts'
+import { MensOuterwearPage } from '../pages/MensOuterwearPage.ts'
 
 test.beforeEach (async({page}) => {
     await page.goto('https://shop.polymer-project.org/')
@@ -8,7 +8,7 @@ test.beforeEach (async({page}) => {
 
 test('navigate to Mens Outerwear page', async ({page}) => {
 
-const navigateTo = new MensOuterwear(page)
+const navigateTo = new MensOuterwearPage(page)
 await navigateTo.mensOuterwearPage()
 
 // assertion
