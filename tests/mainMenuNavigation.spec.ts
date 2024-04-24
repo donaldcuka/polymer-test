@@ -1,10 +1,4 @@
 import {test, expect} from '@playwright/test'
-import { MensOuterwearPage } from '../pages/MensOuterwearPage'
-import { LadiesOuterwearPage } from '../pages/LadiesOuterwearPage'
-import { MensTshirtsPage } from '../pages/MensTshirtsPage'
-import { LadiesTshirtsPage } from '../pages/LadiesTshirtsPage'
-
-
 
 
 
@@ -38,7 +32,7 @@ test('navigate to Mens Outerwear page', async ({page}) => {
 
     // navigation to Men's T-Shirts page 
 
-    await page.click('text=Men\'s T-Shirts');
+    await page.click('text=Men\'s T-Shirts')
 
             
     // assertion
@@ -50,7 +44,7 @@ test('navigate to Mens Outerwear page', async ({page}) => {
 
     // navigation to Ladie's T-Shirts page 
 
-    await page.click('text=Ladies T-Shirts');
+    await page.click('text=Ladies T-Shirts')
 
                 
     // assertion
