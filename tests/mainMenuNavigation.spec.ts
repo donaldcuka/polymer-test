@@ -1,55 +1,41 @@
-import {test, expect} from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import { LadiesOuterwearPage } from '../pages/LadiesOuterwearPage';
+import { LadiesTshirtsPage } from '../pages/LadiesTshirtsPage';
+import { MensTshirtsPage } from '../pages/MensTshirtsPage';
+import { MensOuterwearPage } from '../pages/MensOuterwearPage';
 
 
+test('Menu navigation', async ({ page }) => {
 
-// Menu navigation starts 
+    const ladiesTshirtsPage = new LadiesTshirtsPage(page);
+    const ladiesOuterwearPage = new LadiesOuterwearPage(page);
+    const mensOuterwearPage = new MensOuterwearPage(page);
+    const mensTshirtsPage = new MensTshirtsPage(page);
 
-test('navigate to Mens Outerwear page', async ({page}) => {
-
+    //Open Polymer shop website
     await page.goto('https://shop.polymer-project.org/')
 
-    await page.click('text=Men\'s Outerwear');
+    // Navigate to Ladies T-Shirts page
+    await ladiesTshirtsPage.clickOnLadiesTshirtsSection();
 
     // assertion
-    
-    const headline1 = page.getByRole ('heading',  { name: 'Men\'s Outerwear' })
-    await expect(headline1).toHaveText('Men\'s Outerwear')
-    
-    
+    await expect(page).toHaveURL('https://shop.polymer-project.org/list/ladies_tshirts')
 
     // navigation to Ladie's Outerwear page 
+    await ladiesOuterwearPage.clickOnLadiesOuterwearSection()
 
-    await page.click('text=Ladies Outerwear');
-
-
-        
     // assertion
-        
-    const headline2 = page.getByRole ('heading',  { name: 'Ladies Outerwear' })
-    await expect(headline2).toHaveText('Ladies Outerwear')
-        
-    
+    await expect(page).toHaveURL('https://shop.polymer-project.org/list/ladies_outerwear')
 
     // navigation to Men's T-Shirts page 
+    await mensTshirtsPage.clickOnMensTshirtsSection()
 
-    await page.click('text=Men\'s T-Shirts')
-
-            
     // assertion
-            
-    const headline3 = page.getByRole ('heading',  { name: 'Men\'s T-Shirts' })
-    await expect(headline3).toHaveText('Men\'s T-Shirts')
-            
-    
+    await expect(page).toHaveURL('https://shop.polymer-project.org/list/mens_tshirts')
 
-    // navigation to Ladie's T-Shirts page 
+    // navigation to Men's Outerwear page 
+    await mensOuterwearPage.clickOnMensOuterwearSection()
 
-    await page.click('text=Ladies T-Shirts')
-
-                
     // assertion
-                
-    const headline4 = page.getByRole ('heading',  { name: 'Ladies T-Shirts' })
-    await expect(headline4).toHaveText('Ladies T-Shirts')
-                
+    await expect(page).toHaveURL('https://shop.polymer-project.org/list/mens_outerwear')
 })

@@ -9,7 +9,7 @@ export class MensOuterwearPage extends HelperBase {
         super (page)
     }
 
-    async clickOnmensOuterwearSection(){
+    async clickOnMensOuterwearSection(){
      await this.page.locator("#tabContainer").getByRole('link', { name:'Men\'s Outerwear'}).click()
     }
 
