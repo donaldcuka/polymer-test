@@ -14,7 +14,27 @@ await navigateTo.homePage()
 
 // Navigate to the product page
 
-await page.goto("https://shop.polymer-project.org/detail/mens_outerwear/Men+s+Tech+Shell+Full-Zip")
+await page.locator("#tabContainer").getByRole('link', { name:'Men\'s Outerwear'}).click()
+
+
+
+
+
+
+
+
+//OVU LINIJU POPRAVI, NE LOCIRA PRVI PROIZVOD
+await page.getByRole('list').locator('shop-list-item').first().click()
+
+
+
+
+
+
+
+
+
+
 
 // Add item to cart
 
