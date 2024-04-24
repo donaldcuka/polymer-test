@@ -4,70 +4,58 @@ import { LadiesOuterwearPage } from '../pages/LadiesOuterwearPage'
 import { MensTshirtsPage } from '../pages/MensTshirtsPage'
 import { LadiesTshirtsPage } from '../pages/LadiesTshirtsPage'
 
-test.beforeEach (async({page}) => {
-    await page.goto('https://shop.polymer-project.org/')
-})
-
-
-test.describe ('testing menu navigation', () => {
 
 
 
-// navigation to Men's Outerwear page 
+
+// Menu navigation starts 
 
 test('navigate to Mens Outerwear page', async ({page}) => {
 
-    const navigateTo = new MensOuterwearPage(page)
-    await navigateTo.mensOuterwearPage()
-    
+    await page.goto('https://shop.polymer-project.org/')
+
+    await page.click('text=Men\'s Outerwear');
+
     // assertion
     
-    const headline = page.getByRole ('heading',  { name: 'Men\'s Outerwear' })
-    await expect(headline).toHaveText('Men\'s Outerwear')
+    const headline1 = page.getByRole ('heading',  { name: 'Men\'s Outerwear' })
+    await expect(headline1).toHaveText('Men\'s Outerwear')
     
-    })
+    
 
     // navigation to Ladie's Outerwear page 
 
-test('navigate to Ladies Outerwear page', async ({page}) => {
+    await page.click('text=Ladies Outerwear');
 
-    const navigateTo = new LadiesOuterwearPage(page)
-    await navigateTo.ladiesOuterwearPage()
+
         
     // assertion
         
-    const headline = page.getByRole ('heading',  { name: 'Ladies Outerwear' })
-    await expect(headline).toHaveText('Ladies Outerwear')
+    const headline2 = page.getByRole ('heading',  { name: 'Ladies Outerwear' })
+    await expect(headline2).toHaveText('Ladies Outerwear')
         
-    })
+    
 
     // navigation to Men's T-Shirts page 
 
+    await page.click('text=Men\'s T-Shirts');
 
-test('navigate to Mens Tshirts page', async ({page}) => {
-
-    const navigateTo = new MensTshirtsPage(page)
-    await navigateTo.mensTshirtsPage()
             
     // assertion
             
-    const headline = page.getByRole ('heading',  { name: 'Men\'s T-Shirts' })
-    await expect(headline).toHaveText('Men\'s T-Shirts')
+    const headline3 = page.getByRole ('heading',  { name: 'Men\'s T-Shirts' })
+    await expect(headline3).toHaveText('Men\'s T-Shirts')
             
-    })
+    
 
     // navigation to Ladie's T-Shirts page 
 
+    await page.click('text=Ladies T-Shirts');
 
-test('navigate to Ladies Tshirts page', async ({page}) => {
-
-    const navigateTo = new LadiesTshirtsPage(page)
-    await navigateTo.ladiesTshirtsPage()
                 
     // assertion
                 
-    const headline = page.getByRole ('heading',  { name: 'Ladies T-Shirts' })
-    await expect(headline).toHaveText('Ladies T-Shirts')
+    const headline4 = page.getByRole ('heading',  { name: 'Ladies T-Shirts' })
+    await expect(headline4).toHaveText('Ladies T-Shirts')
                 
-    })    
 })
