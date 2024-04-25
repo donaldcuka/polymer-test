@@ -13,4 +13,8 @@ export class LadiesOuterwearPage extends HelperBase {
      await this.page.locator("#tabContainer").getByRole('link', { name:'Ladies Outerwear'}).click()
     }
 
+    async ladiesOuterwearHeading(){
+        return this.page.getByRole ('heading',  { name: 'Ladies Outerwear' })
+      }
+
 }
