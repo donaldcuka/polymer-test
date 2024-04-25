@@ -18,7 +18,9 @@ await page.locator("#tabContainer").getByRole('link', { name:'Men\'s Outerwear'}
 
 
 //OVU LINIJU POPRAVI, NE LOCIRA PRVI PROIZVOD
-await page.getByRole('list').locator('.grid').locator('shop-list-item').first().click()
+
+
+await page.locator('.grid').getByRole('listitem').getByRole('link').locator('shop-list-item').first().click()
 
 
 // Add item to cart

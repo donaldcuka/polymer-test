@@ -10,7 +10,7 @@ export class HomePage extends HelperBase {
     }
 
 
-async homePage(){    
+async openHomePage(){    
     await this.page.goto("https://shop.polymer-project.org/")
 }
 
