@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test"
+
 export class NavigationPage {
     readonly page: Page
     constructor(page: Page) {
