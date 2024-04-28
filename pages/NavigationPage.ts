@@ -41,10 +41,10 @@ export class NavigationPage {
     async clickOnFirstItem() {
         await this.page.locator('.grid').getByRole('listitem').getByRole('link').locator('shop-list-item').first().click()
     }
-    async clickOnAddToCartButton(){
-       await this.page.getByLabel('Add this item to cart').click()
+    async clickOnAddToCartButton() {
+        await this.page.getByLabel('Add this item to cart').click()
     }
-    async clickOnCheckoutButton(){
+    async clickOnCheckoutButton() {
         await this.page.getByRole('link', { name: 'Checkout' }).click();
     }
     //Shoping Cart Page Navigation
