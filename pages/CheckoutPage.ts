@@ -16,6 +16,16 @@ export class CheckoutPage extends NavigationPage {
     async selectQuantity3() {
         return this.page.getByLabel('Quantity').selectOption('3')
     }
+    //click on Addres Textbox
+    async clickOnAddressTextbox() {
+        this.page.getByRole('textbox', { name: 'Address Shipping Address' })
+    }
+
+    //type invalid address information (address containing only numbers)
+    async enterInfoWithoutAddress() {
+        await this.page.getByRole('textbox', { name: 'Email' }).fill(faker.internet.email())
+        await this.page.getByRole('textbox', { name: 'Phone Number' }).fill('7854209537')
+
     //type valid information for ordering products
     async enterValidOrderInfo() {
         await this.page.getByRole('textbox', { name: 'Email' }).fill(faker.internet.email())
@@ -35,6 +45,13 @@ export class CheckoutPage extends NavigationPage {
         await this.page.getByRole('button', { name: 'Place Order' }).click()
     }
     //Added to cart pop-up
+    async addedToCartPopUp() {
+        return this.page.getByRole('dialog')
+    }
+    //Address Label
+    async addressLabel() {
+       return this.page.locator('#shipAddressLabel')
+
     async addedToCartPopUp(){
         return this.page.getByRole('dialog')
     }
