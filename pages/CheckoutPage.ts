@@ -25,7 +25,7 @@ export class CheckoutPage extends NavigationPage {
     async enterInfoWithoutAddress() {
         await this.page.getByRole('textbox', { name: 'Email' }).fill(faker.internet.email())
         await this.page.getByRole('textbox', { name: 'Phone Number' }).fill('7854209537')
-
+    }
     //type valid information for ordering products
     async enterValidOrderInfo() {
         await this.page.getByRole('textbox', { name: 'Email' }).fill(faker.internet.email())
@@ -51,9 +51,6 @@ export class CheckoutPage extends NavigationPage {
     //Address Label
     async addressLabel() {
        return this.page.locator('#shipAddressLabel')
-
-    async addedToCartPopUp(){
-        return this.page.getByRole('dialog')
     }
     async orderHeadingLocator() {
         return this.page.getByRole('heading', { name: 'Thank you' })
