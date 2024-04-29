@@ -1,4 +1,5 @@
 import { Page } from "@playwright/test"
+
 export class NavigationPage {
     readonly page: Page
     constructor(page: Page) {
@@ -7,6 +8,7 @@ export class NavigationPage {
 
     //Open Polymer-shop HomePage
     async openPolymerShop() {
+    
         await this.page.goto('https://shop.polymer-project.org/')
     }
     //Ladies Outerwear Navigation 
@@ -36,5 +38,19 @@ export class NavigationPage {
     }
     async mensTshirtsHeading() {
         return this.page.getByRole('heading', { name: 'Men\'s T-Shirts' })
+    }
+    //Item Page Navigation
+    async clickOnFirstItem() {
+        await this.page.locator('.grid').getByRole('listitem').getByRole('link').locator('shop-list-item').first().click()
+    }
+    async clickOnAddToCartButton(){
+        await this.page.getByLabel('Add this item to cart').click()
+    }
+    async clickOnCheckoutButton(){
+        await this.page.getByRole('link', { name: 'Checkout' }).click()
+    }
+    //Shoping Cart Page Navigation
+    async addFirstItemToCart() {
+        await this.page.getByRole('button', { name: "Add this item to cart" }).click()
     }
 }
