@@ -44,5 +44,3 @@ test('ordering item with valid information', async ({ page }) => {
     const addressTextColorAfterClick = await checkoutPage.addressLabel()
     await expect(addressTextColorAfterClick).toHaveCSS('color', 'rgb(221, 44, 0)')   
 })
-
-    
