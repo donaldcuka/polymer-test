@@ -8,6 +8,7 @@ export class NavigationPage {
 
     //Open Polymer-shop HomePage
     async openPolymerShop() {
+    
         await this.page.goto('https://shop.polymer-project.org/')
     }
     //Ladies Outerwear Navigation 
@@ -43,19 +44,13 @@ export class NavigationPage {
         await this.page.locator('.grid').getByRole('listitem').getByRole('link').locator('shop-list-item').first().click()
     }
     async clickOnAddToCartButton(){
-       await this.page.getByLabel('Add this item to cart').click()
+        await this.page.getByLabel('Add this item to cart').click()
     }
     async clickOnCheckoutButton(){
-        await this.page.getByRole('link', { name: 'Checkout' }).click();
+        await this.page.getByRole('link', { name: 'Checkout' }).click()
     }
     //Shoping Cart Page Navigation
     async addFirstItemToCart() {
         await this.page.getByRole('button', { name: "Add this item to cart" }).click()
-    }
-    //Scroll to Top of the page
-    async scrollToTop() {
-        await this.page.evaluate(() => {
-            window.scrollTo(0, 0);
-        })
     }
 }
