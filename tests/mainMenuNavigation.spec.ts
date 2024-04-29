@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { NavigationPage } from '../pages/NavigationPage'
-
 test('Menu navigation', async ({ page }) => {
+
     const navigationPage = new NavigationPage(page)
 
     //Open Polymer shop website
